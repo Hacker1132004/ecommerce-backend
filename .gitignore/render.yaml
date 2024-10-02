@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: ecommerce-backend
+    env: node
+    buildCommand: "npm install"
+    startCommand: "node backend/app.js"
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+  - type: web
+    name: ecommerce-frontend
+    env: static
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: frontend/build
+    plan: free
