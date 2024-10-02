@@ -1,6 +1,7 @@
 const { Pool } = require('pg');
+
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,  // This will be provided by Render
+  connectionString: process.env.DATABASE_URL,  // Render provides DATABASE_URL
   ssl: { rejectUnauthorized: false }
 });
 
